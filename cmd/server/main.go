@@ -15,6 +15,9 @@ func main() {
 	if port == "" {
 		port = "8275"
 	}
-	fmt.Printf("Server starting on port %s\n", port)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%q", port), nil))
+
+	addr := ":" + port
+	fmt.Printf("Server starting on %s\n", addr)
+	log.Fatal(http.ListenAndServe(addr, nil))
+
 }
